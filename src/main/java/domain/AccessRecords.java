@@ -1,15 +1,16 @@
 package domain;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class AccessRecords implements Comparable<AccessRecords> {
         private int turnstileID;
         private String building;
         private int floor;
-        private LocalDateTime dateOfEntry;
-        private LocalDateTime timeOfEntry;
+        private LocalDate dateOfEntry;
+        private LocalTime timeOfEntry;
         private int staffID;
 
-        public AccessRecords(int turnstileID, String building, int floor, LocalDateTime dateOfEntry, LocalDateTime timeOfEntry, int staffID){
+        public AccessRecords(int turnstileID, String building, int floor, LocalDate dateOfEntry, LocalTime timeOfEntry, int staffID){
             this.turnstileID=turnstileID;
             this.building=building;
             this.floor=floor;
@@ -42,19 +43,19 @@ public class AccessRecords implements Comparable<AccessRecords> {
             this.floor = floor;
         }
 
-        public LocalDateTime getDateOfEntry() {
+        public LocalDate getDateOfEntry() {
             return dateOfEntry;
         }
 
-        public void setDateOfEntry(LocalDateTime dateOfEntry) {
+        public void setDateOfEntry(LocalDate dateOfEntry) {
             this.dateOfEntry = dateOfEntry;
         }
 
-        public LocalDateTime getTimeOfEntry() {
+        public LocalTime getTimeOfEntry() {
             return timeOfEntry;
         }
 
-        public void setTimeOfEntry(LocalDateTime timeOfEntry) {
+        public void setTimeOfEntry(LocalTime timeOfEntry) {
             this.timeOfEntry = timeOfEntry;
         }
 
@@ -71,5 +72,13 @@ public class AccessRecords implements Comparable<AccessRecords> {
             return 0;
         }
 
+        //        NEED TO Override based on Building/Floor/Hour    ?
+//        @Override
+//        public int compareTo(AccessRecords u) {
+//        if (getFloor() == null || u.getFloor() == null) {
+//            return 0;
+//            }
+//            return getFloor().compareTo(u.getFloor());
+//        }
 
     }
